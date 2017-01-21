@@ -1,0 +1,835 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		446A4743BD4CB5026FCFCDDE /* Pods_WorkerCafeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C1E4B7B9C9291CBE841A40 /* Pods_WorkerCafeUITests.framework */; };
+		632341121E2221810051C824 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341111E2221810051C824 /* Define.swift */; };
+		632341141E224F230051C824 /* CustomSearchAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341131E224F230051C824 /* CustomSearchAlertView.swift */; };
+		63548D7F1E2DDA73007CCA08 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341111E2221810051C824 /* Define.swift */; };
+		63548D801E2DDA74007CCA08 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341111E2221810051C824 /* Define.swift */; };
+		63548D811E2DDA79007CCA08 /* CustomSearchAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341131E224F230051C824 /* CustomSearchAlertView.swift */; };
+		63548D821E2DDA7A007CCA08 /* CustomSearchAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341131E224F230051C824 /* CustomSearchAlertView.swift */; };
+		639B672D1E0A723B00C4857E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B672C1E0A723B00C4857E /* AppDelegate.swift */; };
+		639B67321E0A723B00C4857E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639B67301E0A723B00C4857E /* Main.storyboard */; };
+		639B67341E0A723B00C4857E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639B67331E0A723B00C4857E /* Assets.xcassets */; };
+		639B67371E0A723B00C4857E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639B67351E0A723B00C4857E /* LaunchScreen.storyboard */; };
+		639B67421E0A723B00C4857E /* WorkerCafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B67411E0A723B00C4857E /* WorkerCafeTests.swift */; };
+		639B674D1E0A723B00C4857E /* WorkerCafeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B674C1E0A723B00C4857E /* WorkerCafeUITests.swift */; };
+		639B675F1E0A731600C4857E /* CafeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B675E1E0A731600C4857E /* CafeMapViewController.swift */; };
+		639B67621E0A747C00C4857E /* ServerCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B67611E0A747C00C4857E /* ServerCommunication.swift */; };
+		639B67701E0A972200C4857E /* GoogleMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B676F1E0A972100C4857E /* GoogleMapViewModel.swift */; };
+		639B67761E136EE800C4857E /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B67751E136EE800C4857E /* SlideMenu.swift */; };
+		639B67771E136EE800C4857E /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B67751E136EE800C4857E /* SlideMenu.swift */; };
+		639B67781E136EE800C4857E /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B67751E136EE800C4857E /* SlideMenu.swift */; };
+		63AA7F6F1E1CB4710066A38D /* SearchMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AA7F6D1E1CB4710066A38D /* SearchMenuCell.swift */; };
+		63AA7F701E1CB4710066A38D /* SearchMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63AA7F6E1E1CB4710066A38D /* SearchMenuCell.xib */; };
+		63AA7F731E1CCB190066A38D /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AA7F711E1CCB190066A38D /* LocationCell.swift */; };
+		63AA7F741E1CCB190066A38D /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63AA7F721E1CCB190066A38D /* LocationCell.xib */; };
+		63BAE0001E275794000A7049 /* CafeShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BADFFF1E275794000A7049 /* CafeShopItem.swift */; };
+		63BAE0021E2762DF000A7049 /* CafeShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BADFFF1E275794000A7049 /* CafeShopItem.swift */; };
+		63BAE0031E2762E0000A7049 /* CafeShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BADFFF1E275794000A7049 /* CafeShopItem.swift */; };
+		63D8DF5D1E31EB96001A31D0 /* ServerCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B67611E0A747C00C4857E /* ServerCommunication.swift */; };
+		63D8DF5E1E31EB97001A31D0 /* ServerCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B67611E0A747C00C4857E /* ServerCommunication.swift */; };
+		F046E941E4D4B8B097FE63C4 /* Pods_WorkerCafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AA30BF9342E5564D2A3BB5 /* Pods_WorkerCafe.framework */; };
+		F465A78682F08E3ED983DA54 /* Pods_WorkerCafeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A904A34D47E3F4197009C15 /* Pods_WorkerCafeTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		639B673E1E0A723B00C4857E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 639B67211E0A723B00C4857E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 639B67281E0A723B00C4857E;
+			remoteInfo = WorkerCafe;
+		};
+		639B67491E0A723B00C4857E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 639B67211E0A723B00C4857E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 639B67281E0A723B00C4857E;
+			remoteInfo = WorkerCafe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A904A34D47E3F4197009C15 /* Pods_WorkerCafeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkerCafeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5063B314FF8D65DC6611BC4B /* Pods-WorkerCafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkerCafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkerCafe/Pods-WorkerCafe.debug.xcconfig"; sourceTree = "<group>"; };
+		632341111E2221810051C824 /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
+		632341131E224F230051C824 /* CustomSearchAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchAlertView.swift; sourceTree = "<group>"; };
+		639B67291E0A723B00C4857E /* WorkerCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkerCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		639B672C1E0A723B00C4857E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		639B67311E0A723B00C4857E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		639B67331E0A723B00C4857E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		639B67361E0A723B00C4857E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		639B67381E0A723B00C4857E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		639B673D1E0A723B00C4857E /* WorkerCafeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkerCafeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		639B67411E0A723B00C4857E /* WorkerCafeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerCafeTests.swift; sourceTree = "<group>"; };
+		639B67431E0A723B00C4857E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		639B67481E0A723B00C4857E /* WorkerCafeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkerCafeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		639B674C1E0A723B00C4857E /* WorkerCafeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerCafeUITests.swift; sourceTree = "<group>"; };
+		639B674E1E0A723B00C4857E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		639B675E1E0A731600C4857E /* CafeMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeMapViewController.swift; sourceTree = "<group>"; };
+		639B67611E0A747C00C4857E /* ServerCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCommunication.swift; sourceTree = "<group>"; };
+		639B676F1E0A972100C4857E /* GoogleMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapViewModel.swift; sourceTree = "<group>"; };
+		639B67751E136EE800C4857E /* SlideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenu.swift; sourceTree = "<group>"; };
+		63AA7F6D1E1CB4710066A38D /* SearchMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMenuCell.swift; sourceTree = "<group>"; };
+		63AA7F6E1E1CB4710066A38D /* SearchMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchMenuCell.xib; sourceTree = "<group>"; };
+		63AA7F711E1CCB190066A38D /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		63AA7F721E1CCB190066A38D /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
+		63BADFFF1E275794000A7049 /* CafeShopItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeShopItem.swift; sourceTree = "<group>"; };
+		7B7363F76A39D845421CDAC3 /* Pods-WorkerCafeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkerCafeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkerCafeUITests/Pods-WorkerCafeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8235D71FF5AD792B783C1229 /* Pods-WorkerCafeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkerCafeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkerCafeTests/Pods-WorkerCafeTests.release.xcconfig"; sourceTree = "<group>"; };
+		8D8DBD60A5DEF7AFAAB1E4ED /* Pods-WorkerCafeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkerCafeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkerCafeTests/Pods-WorkerCafeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		93575B7B6ADCBAE6A3946D7F /* Pods-WorkerCafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkerCafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkerCafe/Pods-WorkerCafe.release.xcconfig"; sourceTree = "<group>"; };
+		96C1E4B7B9C9291CBE841A40 /* Pods_WorkerCafeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkerCafeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6AA30BF9342E5564D2A3BB5 /* Pods_WorkerCafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkerCafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCF271EAA683A7D8223B86EB /* Pods-WorkerCafeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkerCafeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkerCafeUITests/Pods-WorkerCafeUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		639B67261E0A723B00C4857E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F046E941E4D4B8B097FE63C4 /* Pods_WorkerCafe.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		639B673A1E0A723B00C4857E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F465A78682F08E3ED983DA54 /* Pods_WorkerCafeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		639B67451E0A723B00C4857E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				446A4743BD4CB5026FCFCDDE /* Pods_WorkerCafeUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		637792D41E20EE8A008320F4 /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				639B67751E136EE800C4857E /* SlideMenu.swift */,
+				63AA7F751E1CCC720066A38D /* XIB */,
+			);
+			name = SlideMenu;
+			sourceTree = "<group>";
+		};
+		639B67201E0A723B00C4857E = {
+			isa = PBXGroup;
+			children = (
+				639B672B1E0A723B00C4857E /* WorkerCafe */,
+				639B67401E0A723B00C4857E /* WorkerCafeTests */,
+				639B674B1E0A723B00C4857E /* WorkerCafeUITests */,
+				639B672A1E0A723B00C4857E /* Products */,
+				F7C3EDD3114B2A66194C7B5B /* Pods */,
+				6D3C18068929B3290B2E3862 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		639B672A1E0A723B00C4857E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				639B67291E0A723B00C4857E /* WorkerCafe.app */,
+				639B673D1E0A723B00C4857E /* WorkerCafeTests.xctest */,
+				639B67481E0A723B00C4857E /* WorkerCafeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		639B672B1E0A723B00C4857E /* WorkerCafe */ = {
+			isa = PBXGroup;
+			children = (
+				639B675C1E0A72D200C4857E /* Controllers */,
+				639B675D1E0A72E100C4857E /* View */,
+				639B67601E0A745000C4857E /* Model */,
+				639B675A1E0A72AA00C4857E /* SupportingFile */,
+			);
+			path = WorkerCafe;
+			sourceTree = "<group>";
+		};
+		639B67401E0A723B00C4857E /* WorkerCafeTests */ = {
+			isa = PBXGroup;
+			children = (
+				639B67411E0A723B00C4857E /* WorkerCafeTests.swift */,
+				639B67431E0A723B00C4857E /* Info.plist */,
+			);
+			path = WorkerCafeTests;
+			sourceTree = "<group>";
+		};
+		639B674B1E0A723B00C4857E /* WorkerCafeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				639B674C1E0A723B00C4857E /* WorkerCafeUITests.swift */,
+				639B674E1E0A723B00C4857E /* Info.plist */,
+			);
+			path = WorkerCafeUITests;
+			sourceTree = "<group>";
+		};
+		639B675A1E0A72AA00C4857E /* SupportingFile */ = {
+			isa = PBXGroup;
+			children = (
+				639B672C1E0A723B00C4857E /* AppDelegate.swift */,
+				632341111E2221810051C824 /* Define.swift */,
+				639B67331E0A723B00C4857E /* Assets.xcassets */,
+				639B67351E0A723B00C4857E /* LaunchScreen.storyboard */,
+				639B67381E0A723B00C4857E /* Info.plist */,
+			);
+			name = SupportingFile;
+			sourceTree = "<group>";
+		};
+		639B675B1E0A72C300C4857E /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				639B67301E0A723B00C4857E /* Main.storyboard */,
+			);
+			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+		639B675C1E0A72D200C4857E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				639B675E1E0A731600C4857E /* CafeMapViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		639B675D1E0A72E100C4857E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				639B676F1E0A972100C4857E /* GoogleMapViewModel.swift */,
+				632341131E224F230051C824 /* CustomSearchAlertView.swift */,
+				637792D41E20EE8A008320F4 /* SlideMenu */,
+				639B675B1E0A72C300C4857E /* StoryBoard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		639B67601E0A745000C4857E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				639B67611E0A747C00C4857E /* ServerCommunication.swift */,
+				63BADFFF1E275794000A7049 /* CafeShopItem.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		63AA7F751E1CCC720066A38D /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				63AA7F6D1E1CB4710066A38D /* SearchMenuCell.swift */,
+				63AA7F6E1E1CB4710066A38D /* SearchMenuCell.xib */,
+				63AA7F711E1CCB190066A38D /* LocationCell.swift */,
+				63AA7F721E1CCB190066A38D /* LocationCell.xib */,
+			);
+			name = XIB;
+			sourceTree = "<group>";
+		};
+		6D3C18068929B3290B2E3862 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA30BF9342E5564D2A3BB5 /* Pods_WorkerCafe.framework */,
+				4A904A34D47E3F4197009C15 /* Pods_WorkerCafeTests.framework */,
+				96C1E4B7B9C9291CBE841A40 /* Pods_WorkerCafeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7C3EDD3114B2A66194C7B5B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5063B314FF8D65DC6611BC4B /* Pods-WorkerCafe.debug.xcconfig */,
+				93575B7B6ADCBAE6A3946D7F /* Pods-WorkerCafe.release.xcconfig */,
+				8D8DBD60A5DEF7AFAAB1E4ED /* Pods-WorkerCafeTests.debug.xcconfig */,
+				8235D71FF5AD792B783C1229 /* Pods-WorkerCafeTests.release.xcconfig */,
+				7B7363F76A39D845421CDAC3 /* Pods-WorkerCafeUITests.debug.xcconfig */,
+				FCF271EAA683A7D8223B86EB /* Pods-WorkerCafeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		639B67281E0A723B00C4857E /* WorkerCafe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 639B67511E0A723B00C4857E /* Build configuration list for PBXNativeTarget "WorkerCafe" */;
+			buildPhases = (
+				E28482936DAED361CBCC07D0 /* 📦 Check Pods Manifest.lock */,
+				639B67251E0A723B00C4857E /* Sources */,
+				639B67261E0A723B00C4857E /* Frameworks */,
+				639B67271E0A723B00C4857E /* Resources */,
+				74EF8BC5B959A1C7EE6E0450 /* 📦 Embed Pods Frameworks */,
+				009DD78AADB1DC70BAC8722A /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WorkerCafe;
+			productName = WorkerCafe;
+			productReference = 639B67291E0A723B00C4857E /* WorkerCafe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		639B673C1E0A723B00C4857E /* WorkerCafeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 639B67541E0A723B00C4857E /* Build configuration list for PBXNativeTarget "WorkerCafeTests" */;
+			buildPhases = (
+				15FB9C0705D0A59604AEFEDF /* 📦 Check Pods Manifest.lock */,
+				639B67391E0A723B00C4857E /* Sources */,
+				639B673A1E0A723B00C4857E /* Frameworks */,
+				639B673B1E0A723B00C4857E /* Resources */,
+				D4077143F30D7B5D4D5DB618 /* 📦 Embed Pods Frameworks */,
+				777083D8DAB1F8B209F9D288 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				639B673F1E0A723B00C4857E /* PBXTargetDependency */,
+			);
+			name = WorkerCafeTests;
+			productName = WorkerCafeTests;
+			productReference = 639B673D1E0A723B00C4857E /* WorkerCafeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		639B67471E0A723B00C4857E /* WorkerCafeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 639B67571E0A723B00C4857E /* Build configuration list for PBXNativeTarget "WorkerCafeUITests" */;
+			buildPhases = (
+				F0B996561D5EA0F10C6F1CB6 /* 📦 Check Pods Manifest.lock */,
+				639B67441E0A723B00C4857E /* Sources */,
+				639B67451E0A723B00C4857E /* Frameworks */,
+				639B67461E0A723B00C4857E /* Resources */,
+				96341491117F2C0A3C1855F9 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				639B674A1E0A723B00C4857E /* PBXTargetDependency */,
+			);
+			name = WorkerCafeUITests;
+			productName = WorkerCafeUITests;
+			productReference = 639B67481E0A723B00C4857E /* WorkerCafeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		639B67211E0A723B00C4857E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Huang;
+				TargetAttributes = {
+					639B67281E0A723B00C4857E = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 2FFS45S3SA;
+						ProvisioningStyle = Automatic;
+					};
+					639B673C1E0A723B00C4857E = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 2FFS45S3SA;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 639B67281E0A723B00C4857E;
+					};
+					639B67471E0A723B00C4857E = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 2FFS45S3SA;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 639B67281E0A723B00C4857E;
+					};
+				};
+			};
+			buildConfigurationList = 639B67241E0A723B00C4857E /* Build configuration list for PBXProject "WorkerCafe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 639B67201E0A723B00C4857E;
+			productRefGroup = 639B672A1E0A723B00C4857E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				639B67281E0A723B00C4857E /* WorkerCafe */,
+				639B673C1E0A723B00C4857E /* WorkerCafeTests */,
+				639B67471E0A723B00C4857E /* WorkerCafeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		639B67271E0A723B00C4857E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63AA7F741E1CCB190066A38D /* LocationCell.xib in Resources */,
+				639B67371E0A723B00C4857E /* LaunchScreen.storyboard in Resources */,
+				639B67341E0A723B00C4857E /* Assets.xcassets in Resources */,
+				63AA7F701E1CB4710066A38D /* SearchMenuCell.xib in Resources */,
+				639B67321E0A723B00C4857E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		639B673B1E0A723B00C4857E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		639B67461E0A723B00C4857E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		009DD78AADB1DC70BAC8722A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorkerCafe/Pods-WorkerCafe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		15FB9C0705D0A59604AEFEDF /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		74EF8BC5B959A1C7EE6E0450 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorkerCafe/Pods-WorkerCafe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		777083D8DAB1F8B209F9D288 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorkerCafeTests/Pods-WorkerCafeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96341491117F2C0A3C1855F9 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorkerCafeUITests/Pods-WorkerCafeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4077143F30D7B5D4D5DB618 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorkerCafeTests/Pods-WorkerCafeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E28482936DAED361CBCC07D0 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F0B996561D5EA0F10C6F1CB6 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		639B67251E0A723B00C4857E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				639B675F1E0A731600C4857E /* CafeMapViewController.swift in Sources */,
+				639B672D1E0A723B00C4857E /* AppDelegate.swift in Sources */,
+				63AA7F6F1E1CB4710066A38D /* SearchMenuCell.swift in Sources */,
+				639B67701E0A972200C4857E /* GoogleMapViewModel.swift in Sources */,
+				63AA7F731E1CCB190066A38D /* LocationCell.swift in Sources */,
+				632341141E224F230051C824 /* CustomSearchAlertView.swift in Sources */,
+				639B67621E0A747C00C4857E /* ServerCommunication.swift in Sources */,
+				63BAE0001E275794000A7049 /* CafeShopItem.swift in Sources */,
+				632341121E2221810051C824 /* Define.swift in Sources */,
+				639B67761E136EE800C4857E /* SlideMenu.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		639B67391E0A723B00C4857E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63BAE0021E2762DF000A7049 /* CafeShopItem.swift in Sources */,
+				63D8DF5E1E31EB97001A31D0 /* ServerCommunication.swift in Sources */,
+				639B67421E0A723B00C4857E /* WorkerCafeTests.swift in Sources */,
+				63548D7F1E2DDA73007CCA08 /* Define.swift in Sources */,
+				63548D811E2DDA79007CCA08 /* CustomSearchAlertView.swift in Sources */,
+				639B67771E136EE800C4857E /* SlideMenu.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		639B67441E0A723B00C4857E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63BAE0031E2762E0000A7049 /* CafeShopItem.swift in Sources */,
+				63D8DF5D1E31EB96001A31D0 /* ServerCommunication.swift in Sources */,
+				639B674D1E0A723B00C4857E /* WorkerCafeUITests.swift in Sources */,
+				63548D801E2DDA74007CCA08 /* Define.swift in Sources */,
+				63548D821E2DDA7A007CCA08 /* CustomSearchAlertView.swift in Sources */,
+				639B67781E136EE800C4857E /* SlideMenu.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		639B673F1E0A723B00C4857E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 639B67281E0A723B00C4857E /* WorkerCafe */;
+			targetProxy = 639B673E1E0A723B00C4857E /* PBXContainerItemProxy */;
+		};
+		639B674A1E0A723B00C4857E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 639B67281E0A723B00C4857E /* WorkerCafe */;
+			targetProxy = 639B67491E0A723B00C4857E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		639B67301E0A723B00C4857E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				639B67311E0A723B00C4857E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		639B67351E0A723B00C4857E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				639B67361E0A723B00C4857E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		639B674F1E0A723B00C4857E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		639B67501E0A723B00C4857E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		639B67521E0A723B00C4857E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5063B314FF8D65DC6611BC4B /* Pods-WorkerCafe.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2FFS45S3SA;
+				INFOPLIST_FILE = WorkerCafe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HuangLiangJun.WorkerCafe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		639B67531E0A723B00C4857E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93575B7B6ADCBAE6A3946D7F /* Pods-WorkerCafe.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2FFS45S3SA;
+				INFOPLIST_FILE = WorkerCafe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HuangLiangJun.WorkerCafe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		639B67551E0A723B00C4857E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D8DBD60A5DEF7AFAAB1E4ED /* Pods-WorkerCafeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2FFS45S3SA;
+				INFOPLIST_FILE = WorkerCafeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HuangLiangJun.WorkerCafeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkerCafe.app/WorkerCafe";
+			};
+			name = Debug;
+		};
+		639B67561E0A723B00C4857E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8235D71FF5AD792B783C1229 /* Pods-WorkerCafeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2FFS45S3SA;
+				INFOPLIST_FILE = WorkerCafeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HuangLiangJun.WorkerCafeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkerCafe.app/WorkerCafe";
+			};
+			name = Release;
+		};
+		639B67581E0A723B00C4857E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B7363F76A39D845421CDAC3 /* Pods-WorkerCafeUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 2FFS45S3SA;
+				INFOPLIST_FILE = WorkerCafeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HuangLiangJun.WorkerCafeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WorkerCafe;
+			};
+			name = Debug;
+		};
+		639B67591E0A723B00C4857E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCF271EAA683A7D8223B86EB /* Pods-WorkerCafeUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 2FFS45S3SA;
+				INFOPLIST_FILE = WorkerCafeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HuangLiangJun.WorkerCafeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WorkerCafe;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		639B67241E0A723B00C4857E /* Build configuration list for PBXProject "WorkerCafe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				639B674F1E0A723B00C4857E /* Debug */,
+				639B67501E0A723B00C4857E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		639B67511E0A723B00C4857E /* Build configuration list for PBXNativeTarget "WorkerCafe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				639B67521E0A723B00C4857E /* Debug */,
+				639B67531E0A723B00C4857E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		639B67541E0A723B00C4857E /* Build configuration list for PBXNativeTarget "WorkerCafeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				639B67551E0A723B00C4857E /* Debug */,
+				639B67561E0A723B00C4857E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		639B67571E0A723B00C4857E /* Build configuration list for PBXNativeTarget "WorkerCafeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				639B67581E0A723B00C4857E /* Debug */,
+				639B67591E0A723B00C4857E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 639B67211E0A723B00C4857E /* Project object */;
+}
