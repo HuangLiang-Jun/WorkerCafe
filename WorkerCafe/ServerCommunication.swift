@@ -130,23 +130,25 @@ class ServerCommunication:NSObject,CLLocationManagerDelegate
             print("jugment")
             UserDefaults.standard.set(todayNum, forKey: YESTERDAY_USERDEFAULT_KEY)
             UserDefaults.standard.synchronize()
-            print("yesrerday:\(yesterdayNum)")
+            print("yesterday:\(yesterdayNum)")
             if todayNum! > yesterdayNum {
+                
                 return true
             } else {
+                
                 return false
             }
         }
         
         UserDefaults.standard.set(todayNum, forKey: YESTERDAY_USERDEFAULT_KEY)
         UserDefaults.standard.synchronize()
-
         print("noYesterdat")
         return true
     }
     
     
     func getCafeShopInfo() -> Array<Any> {
+       
         return cafeShopItemArray
     }
     
@@ -154,9 +156,10 @@ class ServerCommunication:NSObject,CLLocationManagerDelegate
         
         var resultArr = Array<CafeShopItem>()
         let placeTmp = placesDict[conditions[0]]!
+        print("placeTMP:\(placeTmp)")
         for item in cafeShopItemArray {
-            
-            if item.city! == placeTmp {
+           
+            if item.city! == placeTmp || placeTmp == ""{
                 
                 if Double(item.wifi)! >= Double(conditions[1])! {
                     
@@ -167,16 +170,14 @@ class ServerCommunication:NSObject,CLLocationManagerDelegate
                             if Double(item.tasty)! >= Double(conditions[4])! {
                                 
                                 resultArr.append(item)
-                                
-                                
                             }
                         }
                     }
                 }
             }
         }
+       
         print("resultData:\(resultArr)")
         return resultArr
-        
     }
 }

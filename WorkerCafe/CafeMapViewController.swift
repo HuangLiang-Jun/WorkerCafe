@@ -35,9 +35,8 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
         NotificationCenter.default.addObserver(self, selector:#selector(showDetailView) , name:SHOW_DETAIL_VIEW_NAME , object: nil)
         
         detailView.frame.origin.y = self.view.frame.height
+        detailView.backgroundColor = UIColor(red:1.00, green:0.86, blue:0.73, alpha:1.0)
     }
-    
-
     
     // MARK: locationManagerDelegate
     let locationManager = CLLocationManager()
@@ -52,22 +51,22 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
             
             slideMenu = SlideMenu()
             slideMenu.searchBtn.addTarget(self, action: #selector(searchBtnPressed), for: .touchDown)
+            slideMenu.defaultBtn.addTarget(self, action: #selector(defaultBtnPressed), for: .touchUpInside)
             slideMenu.menuTableView.delegate = self
             slideMenu.menuTableView.dataSource = self
             self.view.addSubview(slideMenu)
             let infoArr = comm.getCafeShopInfo()
             mapView.addCoffeeShopLocation(info: infoArr)
-            
         }
     }
     
-    // MARK: SlideMenuSearchBtn
+    // MARK: SlideMenuBtn
     func searchBtnPressed() {
         print("startSearching")
         slideMenu.callMenu()
         
         guard let infoArr = comm.startToSearchingCafeShop(userConditionsArr) else {
-         
+        
             print("解析失敗")
             return
         }
@@ -80,6 +79,14 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
         print("searchResult:\(infoArr)")
         
     }
+    
+    func defaultBtnPressed() {
+        
+        userConditionsArr = ["全國", "0", "0", "0", "0"]
+        slideMenu.menuTableView.reloadData()
+        print("DefaultSetting:\(userConditionsArr)")
+    }
+    
     // callMenuBtn
     @IBAction func callMenuBtnPressed(_ sender: UIBarButtonItem) {
         
@@ -99,10 +106,9 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
     }
 
     // MARK: tableViewDelegate & DataSource function
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        return conditionsList.count
+        return 5
     }
     
     var locationCell = LocationCell()
@@ -112,6 +118,8 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
         // return different xib cell
         if indexPath.row == 0 {
             locationCell = slideMenu.menuTableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as! LocationCell
+            
+            locationCell.backgroundColor = .clear
             locationCell.titleLabel.text = conditionsList[indexPath.row]
             locationCell.locationLabel.text = userConditionsArr[indexPath.row]
             return locationCell
@@ -119,6 +127,7 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
         } else {
             
             otherCell = slideMenu.menuTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SearchMenuCell
+            otherCell.backgroundColor = .clear
             otherCell.titleLabel.text = conditionsList[indexPath.row]
             otherCell.pointLabel.text = userConditionsArr[indexPath.row]
             return otherCell

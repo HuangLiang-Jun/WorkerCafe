@@ -12,7 +12,7 @@ import Foundation
 let conditionsList = ["地區", "WIFI", "有座位", "安靜程度", "口味"]
 
 let locationArr = [
-    "全台",
+    "全國",
     "宜蘭",
     "基隆",
     "台北",
@@ -34,7 +34,7 @@ let locationArr = [
 
 let placesDict: Dictionary<String,String> = [
     
-    "全台": "",
+    "全國": "",
     "宜蘭": "yilan",
     "基隆": "keelung",
     "台北": "taipei",

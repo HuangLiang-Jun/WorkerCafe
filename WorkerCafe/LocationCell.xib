@@ -19,6 +19,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellBox" translatesAutoresizingMaskIntoConstraints="NO" id="4B1-EE-Zcx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地區" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gI5-ng-eKB">
                         <rect key="frame" x="21" y="22" width="41" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -34,6 +37,10 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="4B1-EE-Zcx" secondAttribute="bottom" id="4lm-rM-Y5n"/>
+                    <constraint firstAttribute="trailing" secondItem="4B1-EE-Zcx" secondAttribute="trailing" id="50P-8b-rF4"/>
+                    <constraint firstItem="4B1-EE-Zcx" firstAttribute="top" secondItem="AaP-I8-pOq" secondAttribute="top" id="BjN-Iu-mhV"/>
+                    <constraint firstItem="4B1-EE-Zcx" firstAttribute="leading" secondItem="AaP-I8-pOq" secondAttribute="leading" id="KQn-qH-Fgd"/>
                     <constraint firstItem="gI5-ng-eKB" firstAttribute="top" secondItem="AaP-I8-pOq" secondAttribute="topMargin" constant="14" id="Nx2-2z-N3C"/>
                     <constraint firstItem="gI5-ng-eKB" firstAttribute="leading" secondItem="AaP-I8-pOq" secondAttribute="leadingMargin" constant="13" id="ccU-LB-biX"/>
                 </constraints>
@@ -45,4 +52,7 @@
             <point key="canvasLocation" x="-563" y="72"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="cellBox" width="320" height="69"/>
+    </resources>
 </document>
