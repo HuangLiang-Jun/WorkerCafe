@@ -4,13 +4,16 @@ PODS:
   - GoogleMaps/Base (2.1.1)
   - GoogleMaps/Maps (2.1.1):
     - GoogleMaps/Base
+  - SVProgressHUD (2.0.4)
 
 DEPENDENCIES:
   - GoogleMaps
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
+  SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
 
-PODFILE CHECKSUM: d37ba463e665d83621939051bda1903de6ab489f
+PODFILE CHECKSUM: 107ce61e81faed0d4bf30f8a1375cd654b9244ea
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.1.1

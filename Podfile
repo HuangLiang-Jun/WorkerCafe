@@ -9,7 +9,8 @@ target 'WorkerCafe' do
   
   # Pods for WorkerCafe
   pod 'GoogleMaps'
-  
+  pod 'SVProgressHUD'
+
   target 'WorkerCafeTests' do
     inherit! :search_paths
     # Pods for testing

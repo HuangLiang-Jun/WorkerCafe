@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="750" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rgZ-bO-KFL">
@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cj9-Qh-Ohv">
-                                        <rect key="frame" x="292" y="72" width="70" height="40"/>
+                                        <rect key="frame" x="283" y="72" width="79" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="官網" backgroundImage="box">
@@ -34,10 +34,11 @@
                                         </state>
                                         <connections>
                                             <action selector="officialWebsiteBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xSj-kS-s2U"/>
+                                            <segue destination="3tw-ck-hpy" kind="show" identifier="webView" id="BcD-7a-eZi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cR-nW-MXg">
-                                        <rect key="frame" x="292" y="129" width="70" height="40"/>
+                                        <rect key="frame" x="283" y="129" width="79" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="導航" backgroundImage="box">
@@ -173,27 +174,129 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.85478511524950096" blue="0.57870459585178513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IGH-fR-WRb">
+                                <rect key="frame" x="375" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wpY-m6-0du">
+                                        <rect key="frame" x="67" y="165" width="240" height="273"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9a1-Yj-2n2">
+                                                <rect key="frame" x="59" y="47" width="132" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                                <state key="normal" title="Cafe Nomad官網">
+                                                    <color key="titleColor" red="0.1937803924" green="0.6077989936" blue="0.98530453439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="3tw-ck-hpy" kind="show" identifier="nomad" id="0oy-LL-icL"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="APP功能" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9N3-ei-g1H">
+                                                <rect key="frame" x="82" y="80" width="77" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="資料來源感謝Cafe Nomad提供" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ua-V6-UyX">
+                                                <rect key="frame" x="8" y="17" width="234" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="提供全台咖啡店位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIP-Kb-wNg">
+                                                <rect key="frame" x="47" y="109" width="156" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="顯示網友評分的資訊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vug-5I-rjh">
+                                                <rect key="frame" x="47" y="142" width="156" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="可以依照條件搜尋心目中的店家" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y98-Iz-VXB">
+                                                <rect key="frame" x="47" y="171" width="156" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDf-ti-iqP">
+                                                <rect key="frame" x="173" y="231" width="30" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" backgroundImage="mail"/>
+                                                <connections>
+                                                    <action selector="designerMailBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E9J-GO-OvN"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="如果對APP有什麼     建議也歡迎來信哦  ➡︎" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSo-p3-E8e">
+                                                <rect key="frame" x="47" y="219" width="118" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointS" translatesAutoresizingMaskIntoConstraints="NO" id="dg6-NT-ttK">
+                                                <rect key="frame" x="27" y="112" width="12" height="15"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointS" translatesAutoresizingMaskIntoConstraints="NO" id="Lg6-gD-6yO">
+                                                <rect key="frame" x="27" y="145" width="12" height="15"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointS" translatesAutoresizingMaskIntoConstraints="NO" id="E7w-Uk-jxc">
+                                                <rect key="frame" x="27" y="231" width="12" height="15"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointS" translatesAutoresizingMaskIntoConstraints="NO" id="nYl-r9-tLZ">
+                                                <rect key="frame" x="27" y="186" width="12" height="15"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.92004853490000005" green="0.33092480899999999" blue="0.20095270870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.8702945796632362" blue="0.59381677899280749" alpha="0.82058809432515334" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="咖啡地圖" id="jau-VV-we4">
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="FOD-hm-QEc">
+                            <color key="tintColor" red="0.92004853487014771" green="0.33092480897903442" blue="0.20095270872116089" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="callMenuBtnPressed:" destination="BYZ-38-t0r" id="1tK-cr-Oyg"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="最愛" id="4tI-in-xtT">
+                        <barButtonItem key="rightBarButtonItem" image="infoBtn" id="UlO-8b-l59">
+                            <color key="tintColor" red="0.92004853490000005" green="0.33092480899999999" blue="0.20095270870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="v0h-Eb-2t2" kind="show" id="Qdk-v5-WPc"/>
+                                <action selector="callAppInformationBtnPressed:" destination="BYZ-38-t0r" id="QaH-ad-VNp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
+                    <size key="freeformSize" width="750" height="667"/>
                     <connections>
+                        <outlet property="appInformationView" destination="IGH-fR-WRb" id="lrj-Yk-NHi"/>
                         <outlet property="cheap_Label" destination="YaR-Z2-xWr" id="t3E-UP-oD0"/>
                         <outlet property="detailView" destination="rgZ-bO-KFL" id="g6D-Yb-4oU"/>
+                        <outlet property="infoSubView" destination="wpY-m6-0du" id="oDv-Al-wsr"/>
                         <outlet property="music_Label" destination="iAX-ie-FwI" id="fW9-d1-S4S"/>
+                        <outlet property="officialBtn" destination="Cj9-Qh-Ohv" id="iAu-vi-Ah5"/>
                         <outlet property="quiet_Label" destination="Dxf-cc-tTZ" id="fj1-P6-cyj"/>
                         <outlet property="seat_Label" destination="RZZ-W2-dRX" id="yw3-oW-5rz"/>
                         <outlet property="storeName_Label" destination="vEm-Sf-QlX" id="aGB-pN-WI9"/>
@@ -203,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="921.58920539730138"/>
+            <point key="canvasLocation" x="-67.200000000000003" y="921.58920539730138"/>
         </scene>
         <!--listView-->
         <scene sceneID="rdP-OQ-trJ">
@@ -211,12 +314,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W8g-uH-8Sd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="listView" id="jrp-Ak-iDh"/>
                     <toolbarItems/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="buZ-lu-3J6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.92004853487014771" green="0.33092480897903442" blue="0.20095270872116089" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -225,61 +326,86 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6B-oP-skP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671" y="922"/>
+            <point key="canvasLocation" x="-1209" y="922"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="QPW-0c-c71">
+        <!--Web View Controller-->
+        <scene sceneID="ndb-lv-TrO">
             <objects>
-                <viewController id="v0h-Eb-2t2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" id="3tw-ck-hpy" customClass="WebViewController" customModule="WorkerCafe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dsk-B3-kNx"/>
-                        <viewControllerLayoutGuide type="bottom" id="4pj-BI-225"/>
+                        <viewControllerLayoutGuide type="top" id="KJ2-EY-cFE"/>
+                        <viewControllerLayoutGuide type="bottom" id="zqk-oj-JqL"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Aas-u0-5ta">
+                    <view key="view" contentMode="scaleToFill" id="qyv-co-JnZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e9D-Q2-Mfg">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LR0-PX-zrP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.92004853490000005" green="0.33092480899999999" blue="0.20095270870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTf-Z0-GOM">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="3Vu-0f-nbC">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Vu-0f-nbC" id="kaI-rT-4v1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="XeW-oD-GuR">
+                                        <rect key="frame" x="169" y="141" width="37" height="37"/>
+                                        <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="ShW-kx-6Qg">
+                                        <rect key="frame" x="68" y="190" width="240" height="222"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92004853490000005" green="0.33092480899999999" blue="0.20095270870000001" alpha="0.38296827070552147" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ShW-kx-6Qg" firstAttribute="centerX" secondItem="kTf-Z0-GOM" secondAttribute="centerX" id="PcB-EQ-mGh"/>
+                                    <constraint firstItem="XeW-oD-GuR" firstAttribute="centerX" secondItem="kTf-Z0-GOM" secondAttribute="centerX" id="Z9V-k2-8ki"/>
+                                    <constraint firstItem="ShW-kx-6Qg" firstAttribute="centerY" secondItem="kTf-Z0-GOM" secondAttribute="centerY" id="bYt-vv-chU"/>
+                                    <constraint firstItem="ShW-kx-6Qg" firstAttribute="top" secondItem="XeW-oD-GuR" secondAttribute="bottom" constant="12" id="siL-AM-oXc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="e9D-Q2-Mfg" secondAttribute="trailing" id="5CC-sT-bWs"/>
-                            <constraint firstItem="e9D-Q2-Mfg" firstAttribute="top" secondItem="dsk-B3-kNx" secondAttribute="bottom" id="T9D-Ra-yyn"/>
-                            <constraint firstItem="4pj-BI-225" firstAttribute="top" secondItem="e9D-Q2-Mfg" secondAttribute="bottom" id="VyF-dO-OeT"/>
-                            <constraint firstItem="e9D-Q2-Mfg" firstAttribute="leading" secondItem="Aas-u0-5ta" secondAttribute="leading" id="zm5-ve-dd7"/>
+                            <constraint firstItem="kTf-Z0-GOM" firstAttribute="top" secondItem="KJ2-EY-cFE" secondAttribute="bottom" id="HTu-dp-nBD"/>
+                            <constraint firstAttribute="trailing" secondItem="kTf-Z0-GOM" secondAttribute="trailing" id="MMw-xS-IE6"/>
+                            <constraint firstItem="zqk-oj-JqL" firstAttribute="top" secondItem="kTf-Z0-GOM" secondAttribute="bottom" id="TgU-iV-Iob"/>
+                            <constraint firstItem="LR0-PX-zrP" firstAttribute="top" secondItem="qyv-co-JnZ" secondAttribute="top" id="VAN-eh-U9s"/>
+                            <constraint firstItem="kTf-Z0-GOM" firstAttribute="leading" secondItem="qyv-co-JnZ" secondAttribute="leading" id="nTi-67-iPg"/>
+                            <constraint firstAttribute="trailing" secondItem="LR0-PX-zrP" secondAttribute="trailing" id="p74-AI-vgb"/>
+                            <constraint firstItem="zqk-oj-JqL" firstAttribute="top" secondItem="LR0-PX-zrP" secondAttribute="bottom" id="qzg-q4-vi7"/>
+                            <constraint firstItem="LR0-PX-zrP" firstAttribute="leading" secondItem="qyv-co-JnZ" secondAttribute="leading" id="wA0-Ll-kqw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="GEw-gu-ll5"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="activity" destination="XeW-oD-GuR" id="owW-d9-6J8"/>
+                        <outlet property="loadingImg" destination="ShW-kx-6Qg" id="Erc-sO-cF5"/>
+                        <outlet property="maskView" destination="kTf-Z0-GOM" id="G3H-bp-eh5"/>
+                        <outlet property="officialWebView" destination="LR0-PX-zrP" id="jCq-Kz-CSN"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BeG-br-HUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ahX-Qg-01I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="922"/>
+            <point key="canvasLocation" x="-66" y="1664"/>
         </scene>
     </scenes>
     <resources>
         <image name="box" width="70" height="40"/>
         <image name="cheap" width="40" height="40"/>
         <image name="home" width="40" height="40"/>
+        <image name="infoBtn" width="24" height="24"/>
         <image name="line" width="206" height="3"/>
+        <image name="loading" width="240" height="222"/>
+        <image name="mail" width="30" height="30"/>
         <image name="music" width="40" height="40"/>
+        <image name="pointS" width="12" height="15"/>
         <image name="quiet" width="40" height="40"/>
         <image name="seat" width="40" height="40"/>
         <image name="tasty" width="40" height="40"/>
         <image name="wifi" width="40" height="40"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0oy-LL-icL"/>
+    </inferredMetricsTieBreakers>
 </document>

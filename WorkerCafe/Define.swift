@@ -58,7 +58,7 @@ let DOWNLOAD_FINISH_KEY = NSNotification.Name(rawValue: "downLoadFinish")
 let SHOW_DETAIL_VIEW_NAME = NSNotification.Name(rawValue: "showDetailName")
 let YESTERDAY_USERDEFAULT_KEY = "yesterday"
 let CAFESHOPDATA_USERDEFAULT_KEY = "cafeshopData"
-
+let DOWNLOAD_ERROR_KEY = NSNotification.Name(rawValue: "downloadError")
 
 enum UserSelectedStatus {
     case SelectedMark

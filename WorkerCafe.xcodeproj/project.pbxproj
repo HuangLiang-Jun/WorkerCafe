@@ -10,6 +10,7 @@
 		446A4743BD4CB5026FCFCDDE /* Pods_WorkerCafeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C1E4B7B9C9291CBE841A40 /* Pods_WorkerCafeUITests.framework */; };
 		632341121E2221810051C824 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341111E2221810051C824 /* Define.swift */; };
 		632341141E224F230051C824 /* CustomSearchAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341131E224F230051C824 /* CustomSearchAlertView.swift */; };
+		6336C8631E384C8B00DCB5D3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6336C8621E384C8B00DCB5D3 /* WebViewController.swift */; };
 		63548D7F1E2DDA73007CCA08 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341111E2221810051C824 /* Define.swift */; };
 		63548D801E2DDA74007CCA08 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341111E2221810051C824 /* Define.swift */; };
 		63548D811E2DDA79007CCA08 /* CustomSearchAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341131E224F230051C824 /* CustomSearchAlertView.swift */; };
@@ -33,6 +34,8 @@
 		63BAE0001E275794000A7049 /* CafeShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BADFFF1E275794000A7049 /* CafeShopItem.swift */; };
 		63BAE0021E2762DF000A7049 /* CafeShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BADFFF1E275794000A7049 /* CafeShopItem.swift */; };
 		63BAE0031E2762E0000A7049 /* CafeShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BADFFF1E275794000A7049 /* CafeShopItem.swift */; };
+		63BE74BF1E388CD4004112D4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BE74BE1E388CD4004112D4 /* MapKit.framework */; };
+		63BE74C31E39049B004112D4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BE74C21E39049B004112D4 /* MessageUI.framework */; };
 		63D8DF5D1E31EB96001A31D0 /* ServerCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B67611E0A747C00C4857E /* ServerCommunication.swift */; };
 		63D8DF5E1E31EB97001A31D0 /* ServerCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B67611E0A747C00C4857E /* ServerCommunication.swift */; };
 		F046E941E4D4B8B097FE63C4 /* Pods_WorkerCafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AA30BF9342E5564D2A3BB5 /* Pods_WorkerCafe.framework */; };
@@ -61,6 +64,7 @@
 		5063B314FF8D65DC6611BC4B /* Pods-WorkerCafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkerCafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkerCafe/Pods-WorkerCafe.debug.xcconfig"; sourceTree = "<group>"; };
 		632341111E2221810051C824 /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
 		632341131E224F230051C824 /* CustomSearchAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchAlertView.swift; sourceTree = "<group>"; };
+		6336C8621E384C8B00DCB5D3 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		639B67291E0A723B00C4857E /* WorkerCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkerCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639B672C1E0A723B00C4857E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		639B67311E0A723B00C4857E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 		63AA7F711E1CCB190066A38D /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		63AA7F721E1CCB190066A38D /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		63BADFFF1E275794000A7049 /* CafeShopItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeShopItem.swift; sourceTree = "<group>"; };
+		63BE74BE1E388CD4004112D4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		63BE74C21E39049B004112D4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		7B7363F76A39D845421CDAC3 /* Pods-WorkerCafeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkerCafeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkerCafeUITests/Pods-WorkerCafeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8235D71FF5AD792B783C1229 /* Pods-WorkerCafeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkerCafeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkerCafeTests/Pods-WorkerCafeTests.release.xcconfig"; sourceTree = "<group>"; };
 		8D8DBD60A5DEF7AFAAB1E4ED /* Pods-WorkerCafeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkerCafeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkerCafeTests/Pods-WorkerCafeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +102,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BE74C31E39049B004112D4 /* MessageUI.framework in Frameworks */,
+				63BE74BF1E388CD4004112D4 /* MapKit.framework in Frameworks */,
 				F046E941E4D4B8B097FE63C4 /* Pods_WorkerCafe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				639B675E1E0A731600C4857E /* CafeMapViewController.swift */,
+				6336C8621E384C8B00DCB5D3 /* WebViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -241,6 +250,8 @@
 		6D3C18068929B3290B2E3862 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63BE74C21E39049B004112D4 /* MessageUI.framework */,
+				63BE74BE1E388CD4004112D4 /* MapKit.framework */,
 				E6AA30BF9342E5564D2A3BB5 /* Pods_WorkerCafe.framework */,
 				4A904A34D47E3F4197009C15 /* Pods_WorkerCafeTests.framework */,
 				96C1E4B7B9C9291CBE841A40 /* Pods_WorkerCafeUITests.framework */,
@@ -268,12 +279,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 639B67511E0A723B00C4857E /* Build configuration list for PBXNativeTarget "WorkerCafe" */;
 			buildPhases = (
-				E28482936DAED361CBCC07D0 /* 📦 Check Pods Manifest.lock */,
+				E28482936DAED361CBCC07D0 /* [CP] Check Pods Manifest.lock */,
 				639B67251E0A723B00C4857E /* Sources */,
 				639B67261E0A723B00C4857E /* Frameworks */,
 				639B67271E0A723B00C4857E /* Resources */,
-				74EF8BC5B959A1C7EE6E0450 /* 📦 Embed Pods Frameworks */,
-				009DD78AADB1DC70BAC8722A /* 📦 Copy Pods Resources */,
+				74EF8BC5B959A1C7EE6E0450 /* [CP] Embed Pods Frameworks */,
+				009DD78AADB1DC70BAC8722A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -288,12 +299,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 639B67541E0A723B00C4857E /* Build configuration list for PBXNativeTarget "WorkerCafeTests" */;
 			buildPhases = (
-				15FB9C0705D0A59604AEFEDF /* 📦 Check Pods Manifest.lock */,
+				15FB9C0705D0A59604AEFEDF /* [CP] Check Pods Manifest.lock */,
 				639B67391E0A723B00C4857E /* Sources */,
 				639B673A1E0A723B00C4857E /* Frameworks */,
 				639B673B1E0A723B00C4857E /* Resources */,
-				D4077143F30D7B5D4D5DB618 /* 📦 Embed Pods Frameworks */,
-				777083D8DAB1F8B209F9D288 /* 📦 Copy Pods Resources */,
+				D4077143F30D7B5D4D5DB618 /* [CP] Embed Pods Frameworks */,
+				777083D8DAB1F8B209F9D288 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,11 +320,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 639B67571E0A723B00C4857E /* Build configuration list for PBXNativeTarget "WorkerCafeUITests" */;
 			buildPhases = (
-				F0B996561D5EA0F10C6F1CB6 /* 📦 Check Pods Manifest.lock */,
+				F0B996561D5EA0F10C6F1CB6 /* [CP] Check Pods Manifest.lock */,
 				639B67441E0A723B00C4857E /* Sources */,
 				639B67451E0A723B00C4857E /* Frameworks */,
 				639B67461E0A723B00C4857E /* Resources */,
-				96341491117F2C0A3C1855F9 /* 📦 Copy Pods Resources */,
+				96341491117F2C0A3C1855F9 /* [CP] Copy Pods Resources */,
+				7D80CB2842D308C0B73E074C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -404,14 +416,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		009DD78AADB1DC70BAC8722A /* 📦 Copy Pods Resources */ = {
+		009DD78AADB1DC70BAC8722A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,29 +431,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorkerCafe/Pods-WorkerCafe-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		15FB9C0705D0A59604AEFEDF /* 📦 Check Pods Manifest.lock */ = {
+		15FB9C0705D0A59604AEFEDF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		74EF8BC5B959A1C7EE6E0450 /* 📦 Embed Pods Frameworks */ = {
+		74EF8BC5B959A1C7EE6E0450 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,14 +461,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorkerCafe/Pods-WorkerCafe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		777083D8DAB1F8B209F9D288 /* 📦 Copy Pods Resources */ = {
+		777083D8DAB1F8B209F9D288 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,14 +476,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorkerCafeTests/Pods-WorkerCafeTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		96341491117F2C0A3C1855F9 /* 📦 Copy Pods Resources */ = {
+		7D80CB2842D308C0B73E074C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorkerCafeUITests/Pods-WorkerCafeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96341491117F2C0A3C1855F9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,14 +506,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorkerCafeUITests/Pods-WorkerCafeUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D4077143F30D7B5D4D5DB618 /* 📦 Embed Pods Frameworks */ = {
+		D4077143F30D7B5D4D5DB618 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,34 +521,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorkerCafeTests/Pods-WorkerCafeTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E28482936DAED361CBCC07D0 /* 📦 Check Pods Manifest.lock */ = {
+		E28482936DAED361CBCC07D0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F0B996561D5EA0F10C6F1CB6 /* 📦 Check Pods Manifest.lock */ = {
+		F0B996561D5EA0F10C6F1CB6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -532,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				639B675F1E0A731600C4857E /* CafeMapViewController.swift in Sources */,
+				6336C8631E384C8B00DCB5D3 /* WebViewController.swift in Sources */,
 				639B672D1E0A723B00C4857E /* AppDelegate.swift in Sources */,
 				63AA7F6F1E1CB4710066A38D /* SearchMenuCell.swift in Sources */,
 				639B67701E0A972200C4857E /* GoogleMapViewModel.swift in Sources */,

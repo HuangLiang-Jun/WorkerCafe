@@ -28,23 +28,25 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="start" translatesAutoresizingMaskIntoConstraints="NO" id="0fz-af-WdW">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start" translatesAutoresizingMaskIntoConstraints="NO" id="0fz-af-WdW">
                         <rect key="frame" x="246" y="14" width="40" height="40"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdn-1K-ZAg">
-                        <rect key="frame" x="260" y="27" width="12" height="18"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdn-1K-ZAg">
+                        <rect key="frame" x="261.5" y="27" width="10.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="0fz-af-WdW" secondAttribute="trailing" constant="26" id="0Ec-Vp-hut"/>
                     <constraint firstAttribute="bottom" secondItem="NGT-nX-Uhp" secondAttribute="bottom" id="3r0-lr-vkl"/>
                     <constraint firstAttribute="trailing" secondItem="NGT-nX-Uhp" secondAttribute="trailing" id="FRV-Iv-0ox"/>
                     <constraint firstItem="vNy-eg-5r1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="13" id="TPu-RM-wH6"/>
+                    <constraint firstItem="0fz-af-WdW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="ckL-GG-DcO"/>
                     <constraint firstItem="NGT-nX-Uhp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="dBL-AK-lob"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Kdn-1K-ZAg" secondAttribute="trailing" constant="40" id="poh-2H-ZTL"/>
+                    <constraint firstItem="Kdn-1K-ZAg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="19" id="qh9-Yn-Bhp"/>
                     <constraint firstItem="vNy-eg-5r1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="14" id="v5d-x2-xUv"/>
                     <constraint firstItem="NGT-nX-Uhp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yly-Ag-OJn"/>
                 </constraints>

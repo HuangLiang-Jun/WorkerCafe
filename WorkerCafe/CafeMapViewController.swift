@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import MapKit
+import SVProgressHUD
+import MessageUI
 import CoreLocation
-class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+
+
+class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     
     let mapView = GoogleMapViewModel()
     let comm = ServerCommunication.shareInstance()
     
+    @IBOutlet weak var officialBtn: UIButton!
     @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var appInformationView: UIView!
+    @IBOutlet weak var infoSubView: UIView!
+    
     @IBOutlet weak var storeName_Label: UILabel!
     @IBOutlet weak var wifi_Label: UILabel!
     @IBOutlet weak var seat_Label: UILabel!
@@ -34,18 +43,42 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
         
         NotificationCenter.default.addObserver(self, selector:#selector(showDetailView) , name:SHOW_DETAIL_VIEW_NAME , object: nil)
         
+        NotificationCenter.default.addObserver(self, selector:#selector(downloadError) , name:DOWNLOAD_ERROR_KEY , object: nil)
+        appInformationView.frame = CGRect(x: self.view.frame.width,
+                                          y: 0,
+                                          width: self.view.frame.width,
+                                          height: self.view.frame.height)
+        
+        infoSubView.center = appInformationView.center
+        // startLoadingView
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.show()
+        
+        comm.downLoadCafeShopData()
+        print("done")
         detailView.frame.origin.y = self.view.frame.height
+        detailView.frame.size.width = self.view.frame.width
         detailView.backgroundColor = UIColor(red:1.00, green:0.86, blue:0.73, alpha:1.0)
+    }
+    
+    // set up
+    func startToSetupMapView() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        
     }
     
     // MARK: locationManagerDelegate
     let locationManager = CLLocationManager()
     var getUserLocation = true
+    var myLocation = CLLocation()
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if getUserLocation {
             getUserLocation = false
-            let myLocation = locations.last!
+            myLocation = locations.last!
             locationManager.stopUpdatingLocation()
             self.view.addSubview(mapView.setup(userLocation: myLocation))
             
@@ -57,6 +90,8 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
             self.view.addSubview(slideMenu)
             let infoArr = comm.getCafeShopInfo()
             mapView.addCoffeeShopLocation(info: infoArr)
+            // MARK: dismissLoadingView
+            SVProgressHUD.dismiss()
         }
     }
     
@@ -72,6 +107,9 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
         }
 
         if infoArr.count == 0 {
+            let alert = UIAlertController.init(title: "哦!", message: "沒有符合的店家哦!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             print("無相關條件資料")
             return
         }
@@ -99,6 +137,49 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
             }
         }
     }
+    
+    // MARK: APP Information Btn
+    @IBAction func callAppInformationBtnPressed(_ sender: UIBarButtonItem) {
+        
+        if slideMenu.frame.origin.x == 0 {
+            slideMenu.callMenu()
+        }
+        
+        if appInformationView.frame.origin.x != 0 {
+           
+            UIView.animate(withDuration: TimeInterval(menuSwichPageScale)) {
+                self.view.insertSubview(self.appInformationView, aboveSubview: self.view)
+                self.appInformationView.frame.origin.x = 0
+                self.infoSubView.center = self.appInformationView.center
+            }
+        } else {
+            
+            UIView.animate(withDuration: TimeInterval(menuSwichPageScale), animations: {
+                self.appInformationView.frame.origin.x = self.view.frame.width
+                self.infoSubView.center = self.appInformationView.center
+            })
+        }
+    }
+    
+    @IBAction func designerMailBtnPressed(_ sender: UIButton) {
+        sendMail()
+    }
+    
+    func sendMail() {
+    
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients(["bboydais@gmail.com"])
+        mailComposerVC.setSubject("café map 建議")
+        mailComposerVC.setMessageBody("內容輸入在此~~~", isHTML: false)
+        show(mailComposerVC, sender: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -146,35 +227,10 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
         
     }
     
-    func startToSetupMapView() {
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
- 
-    }
-    
-    // 接到notification通知後 接收使用者搜尋的條件 並修改userConditionArr的內容
-    func removeAlertView(notifcationInfo: Notification) {
-        
-        if let object = notifcationInfo.object as? Array<Any> {
-            print("object:\(object)")
-            print("1: \(object.first!)")
-            print("2: \(object.last!)")
-            let changeIndex = object.first as! Int
-            let option = object.last as! String
-            userConditionsArr[changeIndex] = option
-            
-            print("arr:\(userConditionsArr)")
-        }
-        slideMenu.menuTableView.reloadData()
-        alert.removeFromSuperview()
-    }
-    
     // MARK: DV function
     private let menuSwichPageScale: Float = 0.25
-    var urlStr:String?
-    var selectedCoordinate:CLLocationCoordinate2D?
+    var urlStr = String()
+    var selectedCoordinate = CLLocationCoordinate2D()
     
     func showDetailView(notifcationInfo: Notification) {
         
@@ -185,10 +241,9 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
         if let status = notifcationInfo.object as? Bool {
             
             if status  {
-                print("點擊大頭針，顯示DV")
                 
                 if let info = notifcationInfo.userInfo?["item"] as? CafeShopItem {
-                 
+                    
                     storeName_Label.text = info.name
                     wifi_Label.text = info.wifi
                     seat_Label.text = info.seat
@@ -196,11 +251,29 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
                     cheap_Label.text = info.cheap
                     tasty_Label.text = info.tasty
                     music_Label.text = info.music
-                    urlStr = info.urlStr ?? "沒提供網址"
-                    selectedCoordinate?.latitude = info.lat
-                    selectedCoordinate?.longitude = info.lon
-                    print("info:\(info.name )")
+                    urlStr = info.urlStr
                     
+                    if let lat = info.lat {
+                        
+                        selectedCoordinate.latitude = lat
+                    }
+                    if let lon = info.lon {
+                        
+                        selectedCoordinate.longitude = lon
+                    }
+                    
+                    if info.urlStr == "" {
+                        
+                        officialBtn.isUserInteractionEnabled = false
+                        officialBtn.titleLabel?.adjustsFontSizeToFitWidth = true
+                        officialBtn.setTitle(" 未提供官網 ", for: .normal)
+                    } else {
+                        
+                        officialBtn.isUserInteractionEnabled = true
+                        officialBtn.setTitle("官網", for: .normal)
+                    }
+                    
+                    print("info:\(info.name!)") 
                 }
                 if detailView.frame.origin.y != self.view.frame.height - self.detailView.frame.height {
                     
@@ -221,24 +294,63 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
         }
     }
     
+    // 接到notification通知後 接收使用者搜尋的條件 並修改userConditionArr的內容
+    func removeAlertView(notifcationInfo: Notification) {
+        
+        if let object = notifcationInfo.object as? Array<Any> {
+            
+            let changeIndex = object.first as! Int
+            let option = object.last as! String
+            userConditionsArr[changeIndex] = option
+            print("arr:\(userConditionsArr)")
+        }
+        
+        slideMenu.menuTableView.reloadData()
+        alert.removeFromSuperview()
+    }
+    
     // DV BTN
     @IBAction func officialWebsiteBtnPressed(_ sender: UIButton) {
-        print("Go Offical Website")
+        
+      
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let webVC = segue.destination as! WebViewController
+        if segue.identifier == "webView" {
+            
+            webVC.urlStr = urlStr
+            webVC.nameStr = self.storeName_Label.text!
+            print("send")
+        } else {
+            
+            webVC.urlStr = "https://cafenomad.tw/"
+            webVC.nameStr = "Cafe Nomad官網"
+        }
     }
     
     @IBAction func navigationBtnPressed(_ sender: UIButton) {
-        print("take me to there")
+        
+        let userPlace = MKPlacemark(coordinate: myLocation.coordinate, addressDictionary: nil)
+        let shopPlace = MKPlacemark(coordinate: selectedCoordinate, addressDictionary: nil)
+        let userItem = MKMapItem(placemark: userPlace)
+        let shopItem = MKMapItem(placemark: shopPlace)
+        userItem.name = "我的位置"
+        shopItem.name = storeName_Label.text!
+        let options = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+        let itemArray = [userItem, shopItem]
+        MKMapItem.openMaps(with: itemArray, launchOptions: options)
         
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func downloadError() {
+       
+        print("下載失敗")
+        SVProgressHUD.dismiss()
+        let alert = UIAlertController(title: "資料下載失敗", message: "請檢查網路是否連線", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
 }

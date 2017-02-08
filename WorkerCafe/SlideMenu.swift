@@ -22,8 +22,8 @@ class SlideMenu: UIView {
     }
     
     private let menuScreenScale: CGFloat = 0.8 // menu大小
-    private let menuPointYScale: CGFloat = 0.09 // menu Y軸位置
-    private let menuScreenHeightScale: CGFloat = 0.9146 // menu 高度
+    private let menuPointYScale: CGFloat = 0.084 // menu Y軸位置
+    private let menuScreenHeightScale: CGFloat = 0.92 // menu 高度
     private let fullScreenBounds = UIScreen.main.bounds // user 螢幕尺寸
     private let menuSwichPageScale: Float = 0.25 // 動畫速度
     private var callOutFrame: CGRect! // menu callout frame
@@ -42,11 +42,11 @@ class SlideMenu: UIView {
                                height: fullScreenBounds.height * menuScreenHeightScale)
         
         
-        self.backgroundColor = UIColor(red:1.00, green:0.74, blue:0.62, alpha:1.0)
+        self.backgroundColor = UIColor(red:1.00, green:0.86, blue:0.73, alpha:1.0)
         self.frame = callBackFrame
         
         let titleLabel = UILabel(frame: CGRect(x: 0,
-                                               y: 0,
+                                               y: 5,
                                                width: self.frame.width,
                                                height: self.frame.height * 0.08))
         titleLabel.text = "搜尋咖啡店"
@@ -82,14 +82,16 @@ class SlideMenu: UIView {
     
     var searchBtn: UIButton!
     var defaultBtn: UIButton!
+    //var aboutMeBtn: UIButton!
     private func addSearchBtn(menuFrame: CGRect) { //開始搜尋按鈕
+        let btnColor = UIColor(red:1.00, green:0.35, blue:0.04, alpha:1.0)
         defaultBtn = UIButton(frame: CGRect(x: self.frame.width / 3 ,
                                             y: menuFrame.size.height + 100,
                                             width: 120,
                                             height: 30))
 
         defaultBtn.setTitle("恢復預設", for: .normal)
-        defaultBtn.backgroundColor = .orange
+        defaultBtn.backgroundColor = btnColor
         defaultBtn.layer.cornerRadius = 6.0
 
         searchBtn = UIButton(frame: CGRect(x: self.frame.width / 3,
@@ -97,13 +99,23 @@ class SlideMenu: UIView {
                                            width: 120,
                                            height: 30))
         searchBtn.setTitle("搜尋", for: .normal)
-        searchBtn.backgroundColor = .orange
+        searchBtn.backgroundColor = btnColor
         searchBtn.layer.cornerRadius = 6.0
+        
+        //aboutMeBtn = UIButton(frame: CGRect(x: self.frame.width / 3,
+        //                                    y: searchBtn.frame.origin.y + 60,
+        //                                    width: 120,
+        //                                    height: 30))
+        //aboutMeBtn.backgroundColor = .yellow
+        //aboutMeBtn.setTitle("關於我", for: .normal)
+        //aboutMeBtn.layer.cornerRadius = 6.0
         
         self.addSubview(defaultBtn)
         self.addSubview(searchBtn)
+        //self.addSubview(aboutMeBtn)
         
     }
+    
     
     func callMenu() { // 搜尋menu 顯示 or 隱藏
         UIView.animate(withDuration: TimeInterval(menuSwichPageScale)) {

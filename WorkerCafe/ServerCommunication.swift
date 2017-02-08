@@ -48,6 +48,7 @@ class ServerCommunication:NSObject,CLLocationManagerDelegate
                     self.cafaShopDataProcess(jsonData: jsonObj)
                     
                 } catch {
+                    NotificationCenter.default.post(name: DOWNLOAD_ERROR_KEY , object: nil)
                     print("DownLoad Error")
                 }
             }

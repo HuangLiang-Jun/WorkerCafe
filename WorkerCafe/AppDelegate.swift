@@ -18,9 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyAEk76wAXGXVjvjZFB7TbE1ld8-QKntSIA")
-        let comm = ServerCommunication.shareInstance()
-        comm.downLoadCafeShopData()
-        print("done")
+        
         return true
     }
     
