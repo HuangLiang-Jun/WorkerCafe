@@ -16,12 +16,13 @@ class GoogleMapViewModel:NSObject, GMSMapViewDelegate
 
     func setup(userLocation:CLLocation) -> UIView {
         
-        let camera =
-            GMSCameraPosition.camera(
-                withLatitude:userLocation.coordinate.latitude,
-                longitude:userLocation.coordinate.longitude,
-                zoom: 15)
+        let camera = GMSCameraPosition.camera(
+                    withLatitude:userLocation.coordinate.latitude,
+                    longitude:userLocation.coordinate.longitude,
+                    zoom: 15)
+        
         let mapFrame = UIScreen.main.bounds
+        
         googleMap = GMSMapView.map(withFrame: mapFrame , camera: camera)
         googleMap.isMyLocationEnabled = true
         googleMap.settings.myLocationButton = true

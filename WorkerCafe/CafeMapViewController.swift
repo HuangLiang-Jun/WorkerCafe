@@ -13,10 +13,14 @@ import MessageUI
 import CoreLocation
 
 
-class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
+class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate, NetworkConnectionDelegate {
     
     let mapView = GoogleMapViewModel()
     let comm = ServerCommunication.shareInstance()
+    
+    let locationManager = CLLocationManager()
+    var getUserLocation = true
+    var myLocation = CLLocation()
     
     @IBOutlet weak var officialBtn: UIButton!
     @IBOutlet weak var detailView: UIView!
@@ -31,8 +35,12 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
     @IBOutlet weak var tasty_Label: UILabel!
     @IBOutlet weak var music_Label: UILabel!
     
+    @IBOutlet weak var officialWebBtn: UIButton!
+    
+    @IBOutlet weak var navigationBtn: UIButton!
+    
     var userConditionsArr = ["全國", "0", "0", "0", "0"]
-    var slideMenu:SlideMenu!
+    var slideMenu:SlideMenu?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,149 +52,105 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
         NotificationCenter.default.addObserver(self, selector:#selector(showDetailView) , name:SHOW_DETAIL_VIEW_NAME , object: nil)
         
         NotificationCenter.default.addObserver(self, selector:#selector(downloadError) , name:DOWNLOAD_ERROR_KEY , object: nil)
+        
+        
+        
+        // APP InfoView
         appInformationView.frame = CGRect(x: self.view.frame.width,
                                           y: 0,
                                           width: self.view.frame.width,
                                           height: self.view.frame.height)
         
         infoSubView.center = appInformationView.center
+        
+        
+
         // startLoadingView
         SVProgressHUD.setDefaultMaskType(.black)
         SVProgressHUD.show()
         
-        comm.downLoadCafeShopData()
-        print("done")
+        let networkDetect = DetectNetworkStatus.shareInstance(withVC: self)
+        networkDetect?.delegate = self
+        networkDetect?.start()
+        
         detailView.frame.origin.y = self.view.frame.height
         detailView.frame.size.width = self.view.frame.width
+
         detailView.backgroundColor = UIColor(red:1.00, green:0.86, blue:0.73, alpha:1.0)
+
+        officialWebBtn.frame.size.height = detailView.frame.height * 0.21739
+        officialWebBtn.frame.size.width = detailView.frame.width * 0.18666
+        officialWebBtn.frame.origin.x = detailView.frame.size.width - officialWebBtn.frame.width - 10
+        
+        navigationBtn.frame.size.height = detailView.frame.height * 0.21739
+        navigationBtn.frame.size.width = detailView.frame.width * 0.18666
+        navigationBtn.frame.origin.x = detailView.frame.size.width - navigationBtn.frame.width - 10
     }
     
-    // set up
+    func networkConnection(with isOnline: Bool) {
+        if isOnline{
+            
+            // downloadData
+            comm.downLoadCafeShopData()
+            
+        } else {
+            // OffLine
+            print("沒有網路，讀取Doc檔案")
+            comm.downloadDataAtDocuments()
+            let alert = UIAlertController(title: "目前手機沒有網路哦!!", message: "搭配網路可以讓資料更完全哦~", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    // Set up
     func startToSetupMapView() {
-        locationManager.delegate = self
+        print("setUP")
         locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
         
     }
     
     // MARK: locationManagerDelegate
-    let locationManager = CLLocationManager()
-    var getUserLocation = true
-    var myLocation = CLLocation()
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+        myLocation = locations.last!
+        print("location")
         if getUserLocation {
             getUserLocation = false
-            myLocation = locations.last!
-            locationManager.stopUpdatingLocation()
+            
             self.view.addSubview(mapView.setup(userLocation: myLocation))
             
             slideMenu = SlideMenu()
-            slideMenu.searchBtn.addTarget(self, action: #selector(searchBtnPressed), for: .touchDown)
-            slideMenu.defaultBtn.addTarget(self, action: #selector(defaultBtnPressed), for: .touchUpInside)
-            slideMenu.menuTableView.delegate = self
-            slideMenu.menuTableView.dataSource = self
-            self.view.addSubview(slideMenu)
+            slideMenu?.searchBtn.addTarget(self, action: #selector(searchBtnPressed), for: .touchDown)
+            slideMenu?.defaultBtn.addTarget(self, action: #selector(defaultBtnPressed), for: .touchUpInside)
+            slideMenu?.menuTableView.delegate = self
+            slideMenu?.menuTableView.dataSource = self
+            self.view.addSubview(slideMenu!)
             let infoArr = comm.getCafeShopInfo()
             mapView.addCoffeeShopLocation(info: infoArr)
             // MARK: dismissLoadingView
+            print("dissmiss")
             SVProgressHUD.dismiss()
         }
     }
     
-    // MARK: SlideMenuBtn
-    func searchBtnPressed() {
-        print("startSearching")
-        slideMenu.callMenu()
-        
-        guard let infoArr = comm.startToSearchingCafeShop(userConditionsArr) else {
-        
-            print("解析失敗")
-            return
-        }
-
-        if infoArr.count == 0 {
-            let alert = UIAlertController.init(title: "哦!", message: "沒有符合的店家哦!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            print("無相關條件資料")
-            return
-        }
-        mapView.resetCafeshopMaekers(info: infoArr)
-        print("searchResult:\(infoArr)")
-        
-    }
-    
-    func defaultBtnPressed() {
-        
-        userConditionsArr = ["全國", "0", "0", "0", "0"]
-        slideMenu.menuTableView.reloadData()
-        print("DefaultSetting:\(userConditionsArr)")
-    }
-    
-    // callMenuBtn
+    // MARK: SlideMenuController
     @IBAction func callMenuBtnPressed(_ sender: UIBarButtonItem) {
         
-        slideMenu.callMenu()
-        if detailView.frame.origin.y != self.view.frame.height {
+        slideMenu?.callMenu()
+        if detailView.frame.origin.y != self.view.frame.height || appInformationView.frame.origin.x != self.view.frame.width {
             
             UIView.animate(withDuration: TimeInterval(menuSwichPageScale)) {
-                
+                self.appInformationView.frame.origin.x = self.view.frame.width
                 self.detailView.frame.origin.y = self.view.frame.height
             }
         }
     }
     
-    // MARK: APP Information Btn
-    @IBAction func callAppInformationBtnPressed(_ sender: UIBarButtonItem) {
-        
-        if slideMenu.frame.origin.x == 0 {
-            slideMenu.callMenu()
-        }
-        
-        if appInformationView.frame.origin.x != 0 {
-           
-            UIView.animate(withDuration: TimeInterval(menuSwichPageScale)) {
-                self.view.insertSubview(self.appInformationView, aboveSubview: self.view)
-                self.appInformationView.frame.origin.x = 0
-                self.infoSubView.center = self.appInformationView.center
-            }
-        } else {
-            
-            UIView.animate(withDuration: TimeInterval(menuSwichPageScale), animations: {
-                self.appInformationView.frame.origin.x = self.view.frame.width
-                self.infoSubView.center = self.appInformationView.center
-            })
-        }
-    }
-    
-    @IBAction func designerMailBtnPressed(_ sender: UIButton) {
-        sendMail()
-    }
-    
-    func sendMail() {
-    
-        let mailComposerVC = MFMailComposeViewController()
-        mailComposerVC.mailComposeDelegate = self
-        mailComposerVC.setToRecipients(["bboydais@gmail.com"])
-        mailComposerVC.setSubject("café map 建議")
-        mailComposerVC.setMessageBody("內容輸入在此~~~", isHTML: false)
-        show(mailComposerVC, sender: nil)
-    }
-    
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: tableViewDelegate & DataSource function
+    // MARK: slideMenu delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
         return 5
@@ -194,11 +158,12 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
     
     var locationCell = LocationCell()
     var otherCell = SearchMenuCell()
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         // return different xib cell
         if indexPath.row == 0 {
-            locationCell = slideMenu.menuTableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as! LocationCell
+            locationCell = slideMenu?.menuTableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as! LocationCell
             
             locationCell.backgroundColor = .clear
             locationCell.titleLabel.text = conditionsList[indexPath.row]
@@ -207,7 +172,7 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
             
         } else {
             
-            otherCell = slideMenu.menuTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SearchMenuCell
+            otherCell = slideMenu?.menuTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SearchMenuCell
             otherCell.backgroundColor = .clear
             otherCell.titleLabel.text = conditionsList[indexPath.row]
             otherCell.pointLabel.text = userConditionsArr[indexPath.row]
@@ -216,8 +181,9 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
     }
     
     var alert:CustomSearchAlertView! // When user clicked options in menu will show this view to choose scores
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        slideMenu.menuTableView.deselectRow(at: indexPath, animated: true)
+        slideMenu?.menuTableView.deselectRow(at: indexPath, animated: true)
         //let selectedOption = conditionsList[indexPath.row]
         
         // options Alert
@@ -234,8 +200,8 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
     
     func showDetailView(notifcationInfo: Notification) {
         
-        if slideMenu.frame.origin.x == 0 {
-            slideMenu.callMenu()
+        if slideMenu?.frame.origin.x == 0 {
+            slideMenu?.callMenu()
         }
         
         if let status = notifcationInfo.object as? Bool {
@@ -273,8 +239,9 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
                         officialBtn.setTitle("官網", for: .normal)
                     }
                     
-                    print("info:\(info.name!)") 
+                    print("info:\(info.name!)")
                 }
+                
                 if detailView.frame.origin.y != self.view.frame.height - self.detailView.frame.height {
                     
                     UIView.animate(withDuration: TimeInterval(menuSwichPageScale)) {
@@ -283,12 +250,13 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
                         self.view.insertSubview(self.detailView, aboveSubview: self.view)
                     }
                 }
-            
+                
             } else {
                 print("點擊地圖，收DV")
                 UIView.animate(withDuration: TimeInterval(menuSwichPageScale)) {
                     
                     self.detailView.frame.origin.y = self.view.frame.height
+                    
                 }
             }
         }
@@ -305,14 +273,112 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
             print("arr:\(userConditionsArr)")
         }
         
-        slideMenu.menuTableView.reloadData()
+        slideMenu?.menuTableView.reloadData()
         alert.removeFromSuperview()
     }
+
+    
+    func searchBtnPressed() {
+        print("startSearching")
+        slideMenu?.callMenu()
+        
+        guard let infoArr = comm.startToSearchingCafeShop(userConditionsArr) else {
+            print("解析失敗")
+            return
+        }
+        
+        if infoArr.count == 0 {
+            
+            let alert = UIAlertController.init(title: "哦!", message: "沒有符合的店家哦!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            print("無相關條件資料")
+            return
+        }
+        
+        mapView.resetCafeshopMaekers(info: infoArr)
+        print("searchResult:\(infoArr)")
+        
+    }
+    
+    func defaultBtnPressed() {
+        
+        userConditionsArr = ["全國", "0", "0", "0", "0"]
+        slideMenu?.menuTableView.reloadData()
+        guard let infoArr = comm.startToSearchingCafeShop(userConditionsArr) else {
+            print("解析失敗")
+            return
+        }
+        mapView.resetCafeshopMaekers(info: infoArr)
+        UIView.animate(withDuration: TimeInterval(menuSwichPageScale)) {
+            
+            self.slideMenu?.callMenu()
+            
+        }
+        
+    }
+
+    
+    // MARK: APP Information Btn
+    @IBAction func callAppInformationBtnPressed(_ sender: UIBarButtonItem) {
+        
+        if slideMenu?.frame.origin.x == 0 {
+            
+            slideMenu?.callMenu()
+            
+        } else if detailView.frame.origin.y != view.frame.height {
+            
+            UIView.animate(withDuration: TimeInterval(menuSwichPageScale), animations: {
+                
+                self.detailView.frame.origin.y = self.view.frame.height
+                
+            })
+            
+        }
+        
+        if appInformationView.frame.origin.x != 0 {
+            
+            UIView.animate(withDuration: TimeInterval(menuSwichPageScale)) {
+                
+                self.view.insertSubview(self.appInformationView, aboveSubview: self.view)
+                self.appInformationView.frame.origin.x = 0
+                self.infoSubView.center = self.appInformationView.center
+                
+            }
+            
+        } else {
+            
+            UIView.animate(withDuration: TimeInterval(menuSwichPageScale), animations: {
+                
+                self.appInformationView.frame.origin.x = self.view.frame.width
+                self.infoSubView.center = self.appInformationView.center
+                
+            })
+        }
+    }
+    
+    // call back appInfoView
+    @IBAction func tapAppInfoMaskViewBtnPressed(_ sender: UITapGestureRecognizer) {
+        
+        UIView.animate(withDuration: TimeInterval(menuSwichPageScale)) { 
+        
+            self.appInformationView.frame.origin.x = self.view.frame.width
+            
+        }
+        
+    }
+    
+    // SendMail Btn
+    @IBAction func designerMailBtnPressed(_ sender: UIButton) {
+        sendMail()
+    }
+
+    
     
     // DV BTN
     @IBAction func officialWebsiteBtnPressed(_ sender: UIButton) {
         
-      
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -343,14 +409,37 @@ class CafeMapViewController: UIViewController, CLLocationManagerDelegate, UITabl
         MKMapItem.openMaps(with: itemArray, launchOptions: options)
         
     }
+
+ 
+    //MARK: SendMail
+    func sendMail() {
+        
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients(["bboydais@gmail.com"])
+        mailComposerVC.setSubject("café map 建議")
+        mailComposerVC.setMessageBody("內容輸入在此~~~", isHTML: false)
+        show(mailComposerVC, sender: nil)
+    
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        controller.dismiss(animated: true, completion: nil)
+    
+    }
+    
     
     func downloadError() {
-       
+        
         print("下載失敗")
         SVProgressHUD.dismiss()
         let alert = UIAlertController(title: "資料下載失敗", message: "請檢查網路是否連線", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        
     }
-    
+
+
+
 }

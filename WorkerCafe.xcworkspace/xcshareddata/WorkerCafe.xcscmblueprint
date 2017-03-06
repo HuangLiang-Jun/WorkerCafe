@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "074053021250BA4A2946ECB206B2D87065A9BD1A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "074053021250BA4A2946ECB206B2D87065A9BD1A" : 9223372036854775807,
+    "41BF7DF5A553EBC08FAB2E642EB5287810044778" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "75914D8E-119D-4374-A7C0-C20A34C61B75",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "074053021250BA4A2946ECB206B2D87065A9BD1A" : "WorkerCafe\/",
+    "41BF7DF5A553EBC08FAB2E642EB5287810044778" : "..\/..\/DetectNetwork"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WorkerCafe",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WorkerCafe.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/HuangLiang-Jun\/WorkerCafe.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "074053021250BA4A2946ECB206B2D87065A9BD1A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/HuangLiang-Jun\/DetectNetwork.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "41BF7DF5A553EBC08FAB2E642EB5287810044778"
+    }
+  ]
+}

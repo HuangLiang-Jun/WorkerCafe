@@ -9,37 +9,44 @@
 import UIKit
 
 class WebViewController: UIViewController,UIWebViewDelegate {
-   
+    
     @IBOutlet weak var officialWebView: UIWebView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var loadingImg: UIImageView!
     @IBOutlet weak var maskView: UIView!
-    var urlStr = String()
+    var urlStr:String?
     var nameStr = String()
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var url:URL!
-        if (urlStr.contains("\n")) {
+        if let newUrlStr = urlStr {
+            if (newUrlStr.contains("\n")) {
+                
+                let tmpArr = newUrlStr.components(separatedBy: "\n")
+                let correctUrlStr = tmpArr.first!
+                url = URL(string: correctUrlStr)
+            }else {
+                
+                url = URL(string: newUrlStr)
+            }
             
-            let tmpArr = urlStr.components(separatedBy: "\n")
-            let correctUrlStr = tmpArr.first!
-            url = URL(string: correctUrlStr)
-        }else {
-            
-            url = URL(string: urlStr)
+            print("url:\(url)")
+            guard let newUrl = url else {
+                print("url解析失敗")
+                return
+            }
+            print("newUrl(\(newUrl))")
+            let request = URLRequest(url: newUrl)
+            officialWebView.loadRequest(request)
+            officialWebView.delegate = self
+            self.navigationItem.title = nameStr
         }
-
-        print("url:\(url)")
-        let request = URLRequest(url: url)
-        officialWebView.loadRequest(request)
-        officialWebView.delegate = self
-        self.navigationItem.title = nameStr
     }
-
+    
     // MARK: WebView Delegate
     func webViewDidStartLoad(_ webView: UIWebView) {
-  
+        
         activity.startAnimating()
     }
     
@@ -49,11 +56,4 @@ class WebViewController: UIViewController,UIWebViewDelegate {
         maskView.isHidden = true
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    
-        // Dispose of any resources that can be recreated.
-    
-    }
-
 }

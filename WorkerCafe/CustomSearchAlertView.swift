@@ -82,6 +82,7 @@ class CustomSearchAlertView: UIView, UITableViewDelegate, UITableViewDataSource 
         return cell
         
     }
+    
     private var selectedRow:Int!
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

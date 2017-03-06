@@ -22,8 +22,6 @@ class SlideMenu: UIView {
     }
     
     private let menuScreenScale: CGFloat = 0.8 // menu大小
-    private let menuPointYScale: CGFloat = 0.084 // menu Y軸位置
-    private let menuScreenHeightScale: CGFloat = 0.92 // menu 高度
     private let fullScreenBounds = UIScreen.main.bounds // user 螢幕尺寸
     private let menuSwichPageScale: Float = 0.25 // 動畫速度
     private var callOutFrame: CGRect! // menu callout frame
@@ -32,26 +30,27 @@ class SlideMenu: UIView {
     private func setup() {
         
         callOutFrame = CGRect(x: 0,
-                              y: fullScreenBounds.height * menuPointYScale,
+                              y: 64, // navigationBar height:64 (for any size)
                               width: fullScreenBounds.width * menuScreenScale,
-                              height: fullScreenBounds.height * menuScreenHeightScale)
+                              height: fullScreenBounds.height - 64)
         
         callBackFrame = CGRect(x: -(fullScreenBounds.width * menuScreenScale),
-                               y: fullScreenBounds.height * menuPointYScale,
+                               y: 64,
                                width: fullScreenBounds.width * menuScreenScale,
-                               height: fullScreenBounds.height * menuScreenHeightScale)
+                               height: fullScreenBounds.height - 64)
         
         
         self.backgroundColor = UIColor(red:1.00, green:0.86, blue:0.73, alpha:1.0)
         self.frame = callBackFrame
         
         let titleLabel = UILabel(frame: CGRect(x: 0,
-                                               y: 5,
+                                               y: fullScreenBounds.height * 0.00749,
                                                width: self.frame.width,
                                                height: self.frame.height * 0.08))
+        
         titleLabel.text = "搜尋咖啡店"
         titleLabel.textColor = .black
-        titleLabel.font = UIFont.systemFont(ofSize: CGFloat(25))
+        titleLabel.font = UIFont.systemFont(ofSize: CGFloat(20))
         titleLabel.textAlignment = NSTextAlignment.center
         //titleLabel.backgroundColor = .clear //
         self.addSubview(titleLabel)
@@ -64,15 +63,16 @@ class SlideMenu: UIView {
     private func addMenu(titleFrame: CGRect) {
         let nib = UINib(nibName: "SearchMenuCell", bundle: nil)
         let locationNib = UINib(nibName: "LocationCell", bundle: nil)
-        
+        print("-----")
+        print(self.frame.height)
         menuTableView = UITableView(frame: CGRect(x: 0,
                                                   y: titleFrame.size.height + 5,
                                                   width: self.frame.width,
-                                                  height: 350))
+                                                  height: self.frame.height * 0.52473))
         menuTableView.separatorStyle = .none
         menuTableView.register(nib, forCellReuseIdentifier: "Cell")
         menuTableView.register(locationNib, forCellReuseIdentifier: "LocationCell")
-        menuTableView.rowHeight = 70
+        menuTableView.rowHeight = menuTableView.frame.height * 0.2
         menuTableView.allowsSelection = true
         menuTableView.isScrollEnabled = false
         menuTableView.backgroundColor = .clear
@@ -83,11 +83,12 @@ class SlideMenu: UIView {
     var searchBtn: UIButton!
     var defaultBtn: UIButton!
     //var aboutMeBtn: UIButton!
+    
     private func addSearchBtn(menuFrame: CGRect) { //開始搜尋按鈕
         let btnColor = UIColor(red:1.00, green:0.35, blue:0.04, alpha:1.0)
         defaultBtn = UIButton(frame: CGRect(x: self.frame.width / 3 ,
                                             y: menuFrame.size.height + 100,
-                                            width: 120,
+                                            width: self.frame.width * 0.4,
                                             height: 30))
 
         defaultBtn.setTitle("恢復預設", for: .normal)
@@ -96,23 +97,17 @@ class SlideMenu: UIView {
 
         searchBtn = UIButton(frame: CGRect(x: self.frame.width / 3,
                                            y: defaultBtn.frame.origin.y + 40,
-                                           width: 120,
+                                           width: self.frame.width * 0.4,
                                            height: 30))
+        
         searchBtn.setTitle("搜尋", for: .normal)
         searchBtn.backgroundColor = btnColor
         searchBtn.layer.cornerRadius = 6.0
-        
-        //aboutMeBtn = UIButton(frame: CGRect(x: self.frame.width / 3,
-        //                                    y: searchBtn.frame.origin.y + 60,
-        //                                    width: 120,
-        //                                    height: 30))
-        //aboutMeBtn.backgroundColor = .yellow
-        //aboutMeBtn.setTitle("關於我", for: .normal)
-        //aboutMeBtn.layer.cornerRadius = 6.0
+
         
         self.addSubview(defaultBtn)
         self.addSubview(searchBtn)
-        //self.addSubview(aboutMeBtn)
+        
         
     }
     
@@ -127,13 +122,5 @@ class SlideMenu: UIView {
         }
     }
     
-    
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
     
 }

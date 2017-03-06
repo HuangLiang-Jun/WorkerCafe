@@ -11,6 +11,8 @@
 		632341121E2221810051C824 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341111E2221810051C824 /* Define.swift */; };
 		632341141E224F230051C824 /* CustomSearchAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341131E224F230051C824 /* CustomSearchAlertView.swift */; };
 		6336C8631E384C8B00DCB5D3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6336C8621E384C8B00DCB5D3 /* WebViewController.swift */; };
+		6350B46A1E4B104D00FBA7A8 /* DetectNetworkStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 6350B4661E4B104D00FBA7A8 /* DetectNetworkStatus.m */; };
+		6350B46B1E4B104D00FBA7A8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6350B4681E4B104D00FBA7A8 /* Reachability.m */; };
 		63548D7F1E2DDA73007CCA08 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341111E2221810051C824 /* Define.swift */; };
 		63548D801E2DDA74007CCA08 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341111E2221810051C824 /* Define.swift */; };
 		63548D811E2DDA79007CCA08 /* CustomSearchAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341131E224F230051C824 /* CustomSearchAlertView.swift */; };
@@ -65,6 +67,12 @@
 		632341111E2221810051C824 /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
 		632341131E224F230051C824 /* CustomSearchAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchAlertView.swift; sourceTree = "<group>"; };
 		6336C8621E384C8B00DCB5D3 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		6350B4641E4B104C00FBA7A8 /* WorkerCafe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorkerCafe-Bridging-Header.h"; sourceTree = "<group>"; };
+		6350B4651E4B104D00FBA7A8 /* DetectNetworkStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetectNetworkStatus.h; sourceTree = "<group>"; };
+		6350B4661E4B104D00FBA7A8 /* DetectNetworkStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetectNetworkStatus.m; sourceTree = "<group>"; };
+		6350B4671E4B104D00FBA7A8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		6350B4681E4B104D00FBA7A8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		6350B4691E4B104D00FBA7A8 /* StatusSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusSingleton.h; sourceTree = "<group>"; };
 		639B67291E0A723B00C4857E /* WorkerCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkerCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639B672C1E0A723B00C4857E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		639B67311E0A723B00C4857E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -127,6 +135,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6350B4631E4B100600FBA7A8 /* NetworkDetect */ = {
+			isa = PBXGroup;
+			children = (
+				6350B4651E4B104D00FBA7A8 /* DetectNetworkStatus.h */,
+				6350B4661E4B104D00FBA7A8 /* DetectNetworkStatus.m */,
+				6350B4671E4B104D00FBA7A8 /* Reachability.h */,
+				6350B4681E4B104D00FBA7A8 /* Reachability.m */,
+				6350B4691E4B104D00FBA7A8 /* StatusSingleton.h */,
+				6350B4641E4B104C00FBA7A8 /* WorkerCafe-Bridging-Header.h */,
+			);
+			name = NetworkDetect;
+			sourceTree = "<group>";
+		};
 		637792D41E20EE8A008320F4 /* SlideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +251,7 @@
 		639B67601E0A745000C4857E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6350B4631E4B100600FBA7A8 /* NetworkDetect */,
 				639B67611E0A747C00C4857E /* ServerCommunication.swift */,
 				63BADFFF1E275794000A7049 /* CafeShopItem.swift */,
 			);
@@ -350,6 +372,7 @@
 					639B67281E0A723B00C4857E = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 2FFS45S3SA;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					639B673C1E0A723B00C4857E = {
@@ -558,6 +581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6350B46B1E4B104D00FBA7A8 /* Reachability.m in Sources */,
 				639B675F1E0A731600C4857E /* CafeMapViewController.swift in Sources */,
 				6336C8631E384C8B00DCB5D3 /* WebViewController.swift in Sources */,
 				639B672D1E0A723B00C4857E /* AppDelegate.swift in Sources */,
@@ -565,6 +589,7 @@
 				639B67701E0A972200C4857E /* GoogleMapViewModel.swift in Sources */,
 				63AA7F731E1CCB190066A38D /* LocationCell.swift in Sources */,
 				632341141E224F230051C824 /* CustomSearchAlertView.swift in Sources */,
+				6350B46A1E4B104D00FBA7A8 /* DetectNetworkStatus.m in Sources */,
 				639B67621E0A747C00C4857E /* ServerCommunication.swift in Sources */,
 				63BAE0001E275794000A7049 /* CafeShopItem.swift in Sources */,
 				632341121E2221810051C824 /* Define.swift in Sources */,
@@ -731,12 +756,15 @@
 			baseConfigurationReference = 5063B314FF8D65DC6611BC4B /* Pods-WorkerCafe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2FFS45S3SA;
 				INFOPLIST_FILE = WorkerCafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HuangLiangJun.WorkerCafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorkerCafe/WorkerCafe-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -746,12 +774,14 @@
 			baseConfigurationReference = 93575B7B6ADCBAE6A3946D7F /* Pods-WorkerCafe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2FFS45S3SA;
 				INFOPLIST_FILE = WorkerCafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HuangLiangJun.WorkerCafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorkerCafe/WorkerCafe-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
