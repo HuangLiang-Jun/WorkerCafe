@@ -57,7 +57,7 @@ class GoogleMapViewModel:NSObject, GMSMapViewDelegate
             print("wiff:\(shopInfo.wifi)")
         
         NotificationCenter.default.post(name: SHOW_DETAIL_VIEW_NAME, object: true, userInfo: ["item":shopInfo])
-        // NotificationCenter.default.post(name: SHOW_DETAIL_VIEW_NAME, object: true)
+        
         return false
 
     }
